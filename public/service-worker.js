@@ -1,3 +1,4 @@
+//* why is this console log not showing but offline is working?
 console.log("Hi from your service-worker.js file!");
 
 const CACHE_NAME = "static-cache-v2";
