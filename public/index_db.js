@@ -6,7 +6,8 @@ request.onupgradeneeded = (event) => {
 
   // Creates an object store with a amountID keypath that can be used to query on.
   const budgetStore = db.createObjectStore("budget_DB", {
-    keyPath: "amountID",
+    keyPath: "id",
+    autoIncrement: true,
   });
   // Creates a amountIndex that we can query on.
   budgetStore.createIndex("amountIndex", "amount");
