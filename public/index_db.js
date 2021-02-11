@@ -8,21 +8,21 @@ request.onupgradeneeded = (event) => {
   const budgetStore = db.createObjectStore("budget_DB", {
     keyPath: "amountID",
   });
-  // Creates a statusIndex that we can query on.
-  budgetStore.createIndex("statusIndex", "status");
+  // Creates a amountIndex that we can query on.
+  budgetStore.createIndex("amountIndex", "amount");
 };
 
-// Opens a transaction, accesses the budget_DB objectStore and statusIndex.
+// Opens a transaction, accesses the budget_DB objectStore and amountIndex.
 request.onsuccess = () => {
   const db = request.result;
   const transaction = db.transaction(["budget_DB"], "readwrite");
   const budgetStore = transaction.objectStore("budget_DB");
-  const statusIndex = budgetStore.index("statusIndex");
+  const amountIndex = budgetStore.index("amountIndex");
 
   // Adds data to our objectStore
   budgetStore.add({
     amountID: " how do i get the id=t-name value here????????",
-    status: " how do i get the id=t-amount value here?????????",
+    amount: " how do i get the id=t-amount value here?????????",
   });
 
   // Return an item by keyPath
@@ -32,7 +32,7 @@ request.onsuccess = () => {
   };
 
   // Return an item by index
-  const getRequestIdx = statusIndex.getAll("complete");
+  const getRequestIdx = amountIndex.getAll("complete");
   getRequestIdx.onsuccess = () => {
     console.log(getRequestIdx.result);
   };
