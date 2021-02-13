@@ -28,8 +28,26 @@ function saveRecord(data) {
   console.log(data);
 }
 
-// window.addEventListener("online", checkDB());
-// // ononline version
-// window.ononline = (event) => {
-//   console.log("You are now connected to the network.");
-// };
+function online() {
+  const transaction = db.transaction(["budget_DB"], "readwrite");
+  const budgetStore = transaction.objectStore("budget_DB");
+  const allRecords = budgetStore.getAll();
+
+  allRecords.onsuccess = function () {
+    fetch("/api/transaction/bulk", {
+      method: "POST",
+      body: JSON.stringify(allRecords.result),
+      headers: {
+        Accept: "application/json, text/plain, */*",
+        "Content-Type": "application/json",
+      },
+    }).then((response) => {
+      const transaction = db.transaction(["budget_DB"], "readwrite");
+      const budgetStore = transaction.objectStore("budget_DB");
+      budgetStore.clear();
+    });
+  };
+}
+// window.addEventListener("online", online());
+
+
