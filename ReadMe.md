@@ -1,6 +1,6 @@
 # Project: Portfolio Update
 
-  Deployed Site Link - > https://fit-workout-tracker.herokuapp.com/
+  Deployed Site Link - > https://pwa-budget-tracker-indexed.herokuapp.com/
 
 
 ## Table of Contents: 
@@ -19,18 +19,33 @@
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description:
-User Story - As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
+Add functionality to a Budget Tracker application to allow for offline access and functionality.
+
+The user will be able to add expenses and deposits to their budget with or without a connection. When entering transactions offline, they should populate the total when brought back online.
+
+Offline Functionality:
+
+  * Enter deposits offline
+
+  * Enter expenses offline
+
+When brought back online:
+
+  * Offline entries should be added to tracker.
 
 In this project we use a MongoDB database with a Mongoose schema and handle routes with Express to provide the user with a functional app.
 
+User Story - 
+GIVEN a user is on Budget App without an internet connection
+WHEN the user inputs a withdrawal or deposit
+THEN that will be shown on the page, and added to their transaction history when their connection is back online.
 
 ## Installation Instructions: 
-1) npm i 
-2) npm run seed
+1) npm i on server.js
 
 
 ## Test Command: 
-N/A
+To test offline functionality open dev tools and go to the network tab. Change from Online to Offline and refresh page. Then add a transaction and refresh again. Change back to Online from Offline and refresh for the last time. 
 
 ## Github: 
 Check out more projects on my Github at https://github.com/ReindeerCode
@@ -39,20 +54,14 @@ Check out more projects on my Github at https://github.com/ReindeerCode
 If you have any questions please feel free to email me at ReindeerCode@gmail.com
 
 ## Other Contributors:
-Collaborated with Eddie (EddiePhi), Dustin (DustinErwin), Aren (arensalmela)
+Collaborated with https://github.com/arensalmela
 
 ## Images:
-Following screen shot is of the Last Workout screen
-
-![Project Screenshot](./public/assets/lastWorkout.png)
 
 Following screen shot is of the Dashboard screen
 
 ![Project Screenshot](./public/assets/dashboard.png)
 
-Following screen shot is of the Add Workout screen
-
-![Project Screenshot](./public/assets/addWorkout.png)
 
 
 
