@@ -28,7 +28,8 @@ function saveRecord(data) {
   console.log(data);
 }
 
-// ononline version
-window.ononline = (event) => {
-  console.log("You are now connected to the network.");
-};
+// window.addEventListener("online", checkDB());
+// // ononline version
+// window.ononline = (event) => {
+//   console.log("You are now connected to the network.");
+// };
