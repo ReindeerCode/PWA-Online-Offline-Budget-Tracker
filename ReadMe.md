@@ -1,10 +1,10 @@
-# Project: Portfolio Update
+# Project: PWA-Online-Offline-Budget-Tracker
 
   Deployed Site Link - > https://pwa-budget-tracker-indexed.herokuapp.com/
 
 
 ## Table of Contents: 
-- [Project: Portfolio Update](#project-portfolio-update)
+- [Project: PWA-Online-Offline-Budget-Tracker](#project-pwa-online-offline-budget-tracker)
   - [Table of Contents:](#table-of-contents)
   - [License:](#license)
   - [Description:](#description)
