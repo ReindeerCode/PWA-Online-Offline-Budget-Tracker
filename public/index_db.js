@@ -48,6 +48,4 @@ function online() {
     });
   };
 }
-// window.addEventListener("online", online());
-
-
+window.addEventListener("online", online);
